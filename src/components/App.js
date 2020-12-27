@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 
-const App = (props) => {
-  const { forecasts, location } = props;
+const App = ({ forecasts, location }) => {
   return (
     <div className="App">
       <LocationDetails city={location.city} country={location.country} />
