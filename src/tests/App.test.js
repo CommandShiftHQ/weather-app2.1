@@ -1,8 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import App from "../components/App";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Weather App/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+  it("renders city and country", () => {
+    const validProps = {
+      city: "MockCity",
+      country: "MockCountry",
+    };
+
+    render(<App location={validProps} />);
+    const copy = screen.getByText(/MockCity, MockCountry/i);
+    expect(copy).toBeInTheDocument();
+  });
 });
