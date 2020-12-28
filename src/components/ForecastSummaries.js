@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/App.css";
+import PropTypes from "prop-types";
 import ForecastSummary from "./ForecastSummary";
 
 const ForecastSummaries = ({ forecasts }) => {
