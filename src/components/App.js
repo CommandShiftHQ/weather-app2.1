@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 import axios from "axios";
 import LocationDetails from "./LocationDetails";
@@ -19,6 +19,10 @@ const App = () => {
 
     axios.get(endpoint).then((response) => console.log(response.data));
   };
+
+  useEffect(() => {
+    getForecast();
+  }, []);
 
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
