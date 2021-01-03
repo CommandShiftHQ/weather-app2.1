@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/App.css";
+import axios from "axios";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
@@ -8,9 +9,16 @@ const App = () => {
   const [forecasts, setForecasts] = useState([]);
   const [location, setLocation] = useState({ city: "", country: "" });
   const [selectedDate, setSelectedDate] = useState(0);
+
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
+
+  const getForecast = () => {
+    const endpoint = "https://mcr-codes-weather-app.herokuapp.com/forecast";
+
+    axios.get(endpoint).then((response) => console.log(response.data));
+  };
 
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
