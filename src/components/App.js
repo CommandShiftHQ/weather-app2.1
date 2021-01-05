@@ -24,6 +24,10 @@ const App = () => {
     setSelectedDate(date);
   };
 
+  const handleCitySearch = () => {
+    getForecast(setSelectedDate, setForecasts, setLocation);
+  };
+
   return (
     <div className="weather-app">
       <LocationDetails city={location.city} country={location.country} />
