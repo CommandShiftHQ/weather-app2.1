@@ -7,6 +7,7 @@ import ForecastDetails from "./ForecastDetails";
 import SearchForm from "./SearchForm";
 
 const App = () => {
+  const [searchText, setSearchText] = useState("");
   const [forecasts, setForecasts] = useState([]);
   const [location, setLocation] = useState({ city: "", country: "" });
   const [selectedDate, setSelectedDate] = useState(0);
