@@ -6,7 +6,7 @@ const SearchForm = ({ searchText, setSearchText }) => {
 
   return (
     <div className="search-form">
-      <input type="text" onChange={handleInputChange} />
+      <input type="text" onChange={handleInputChange} value={searchText} />
       <button type="submit">Search</button>
     </div>
   );
