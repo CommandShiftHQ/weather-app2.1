@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="weather-app">
       <LocationDetails city={location.city} country={location.country} />
-      <SearchForm />
+      <SearchForm searchText={searchText} setSearchText={setSearchText} />
       <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
