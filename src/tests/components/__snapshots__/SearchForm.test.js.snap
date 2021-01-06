@@ -10,6 +10,7 @@ exports[`SearchForm renders correctly 1`] = `
       value="Leeds"
     />
     <button
+      class="search-form__submit-button"
       type="submit"
     >
       Search
