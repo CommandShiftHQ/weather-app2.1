@@ -12,7 +12,12 @@ const LocationDetails = (props) => {
 
 export default LocationDetails;
 
+LocationDetails.defaultProps = {
+  errorMessage: "",
+};
+
 LocationDetails.propTypes = {
   city: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string,
 };
