@@ -3,6 +3,7 @@ import axios from "axios";
 
 const getForecast = (
   searchText,
+  setErrorMessage,
   setSelectedDate,
   setForecasts,
   setLocation
@@ -23,9 +24,11 @@ const getForecast = (
     .catch((error) => {
       const { status } = error.response;
       if (status === 404) {
+        setErrorMessage("No such town or city, try again!");
         console.error("Location is not valid", error);
       }
       if (status === 500) {
+        setErrorMessage("Server error, try again later");
         console.error("Server error", error);
       }
     });
