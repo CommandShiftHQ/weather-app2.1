@@ -20,4 +20,16 @@ describe("SearchForm", () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it("renders correct text on the submit button", () => {
+    const { getByText } = render(
+      <SearchForm
+        searchText={validProps.searchText}
+        setSearchText={validProps.setSearchText}
+        onSubmit={validProps.onSubmit}
+      />
+    );
+
+    expect(getByText("Search")).toHaveClass("search-form__submit-button");
+  });
 });
