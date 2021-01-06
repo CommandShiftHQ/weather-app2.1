@@ -24,6 +24,9 @@ const getForecast = (
       if (status === 404) {
         console.error("Location is not valid", error);
       }
+      if (status === 500) {
+        console.error("Server error", error);
+      }
     });
 };
 
