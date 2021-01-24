@@ -28,7 +28,7 @@ const getForecast = (
         console.error("Location is not valid", error);
       }
       if (status === 500) {
-        setErrorMessage("Server error, try again later");
+        setErrorMessage("Oops, server error, try again later.");
         console.error("Server error", error);
       }
     });
